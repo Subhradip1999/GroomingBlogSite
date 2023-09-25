@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!---Blog body starts-->
+<!--Heading-->
+{% load static %}
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+<style>
+        #blink {
+            animation: blinker 1.5s linear infinite;
+            color: red;
+            font-family: sans-serif;
+        }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+{% for data in dataset %}
+    <div class="container-fluid">
+        <div class="py-4 text-center container">
+            <h1>{{ data.title }}</h1>
+        </div>
+        <!--main content body starts-->
+        <!--img part -->
+          <div class='row py-5'>
+              <div class='col-xs-5 col-sm-3 col-lg-5 col-md-6' style='background-color: none;'>
+                  <div class='text-left'>
+                      <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image' >
+                  </div>
+                  <br>
+                  <div class='text-left'>
+                      <img src="{% static 'img/' %}{{data.img_path_2}}" class='img-fluid' alt='Responsive image' >
+                  </div>
+                  <br>
+                  <div class='text-left'>
+                      <img src="{% static 'img/' %}{{data.img_path_3}}" class='img-fluid' alt='Responsive image' >
+                  </div>
+              </div>
+              <!-- content part -->
+              <div class='col-xs-7 col-sm-3 col-lg-7 col-md-6' style='background-color: none;'>
+                  <p>
+                     {% with description=data.description|safe %}
+                      {{ description|linebreaks }}
+                      {% endwith %}
+                  </p>
+              </div>
+              <div class='py-2 text-center container' style='background-color: pink;'>
+                 <h2 id="blink"><a href="{{data.affiliate_link}}">Click Here to go to product site.</a></h2>
+              </div>
+              <div class='py-2 text-center container'>
+                  <img src="./static/img/hand_index.png">
+              </div>
+          </div>
+    </div>
+{% endfor %}
+{% endblock body %}

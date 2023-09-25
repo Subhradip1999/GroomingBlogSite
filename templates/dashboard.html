@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+        <main>
+            <!--Carosoul starts-->
+            <section class="py-5 text-center container">
+                <div class="row py-lg-2" style="height: 10%;">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" data-bs-interval="2000">
+                            <img src="../static/img/img1.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block" style="background-color: violet; border-radius: 60px">
+                                <h4>Welcome Beautiful..!</h4>
+                                <p> If you are a beauty enthusiast, then you are at the right place.</p>
+                              </div>
+                          </div>
+                          <div class="carousel-item" data-bs-interval="2000">
+                            <img src="../static/img/img2.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block" style="background-color: violet; border-radius: 60px">
+                                <h5>Find out the right product</h5>
+                                <p>We are here to help you out...</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="../static/img/img3.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block" style="background-color: violet; border-radius: 60px">
+                                <h5>Get the most trending and useful products.</h5>
+                                <p>Follow us to get info about the products which suites you the most..</p>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+            </section>
+            <!--Carosoul ends-->
+            <!---Thumbnails starts-->
+            <div class="album py-5 bg-body-tertiary">
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                      {% for data in dataset1 %}
+                      <div class="col col-md-4">
+                        <a style="text-decoration: none" href="viewpost_1">
+                        <div class="card shadow-sm">
+                          <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image'>
+                          <p class="card-text text-center"><b>{{ data.title }}</b></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">&nbsp;&nbsp;5 mins</small>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                      {% for data in dataset2 %}
+                      <div class="col col-md-4">
+                        <a style="text-decoration: none" href="viewpost_2">
+                        <div class="card shadow-sm">
+                          <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image'>
+                          <p class="card-text text-center"><b>{{ data.title }}</b></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">&nbsp;&nbsp;5 mins</small>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                      {% for data in dataset3 %}
+                      <div class="col col-md-4">
+                        <a style="text-decoration: none" href="viewpost_3">
+                        <div class="card shadow-sm">
+                          <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image'>
+                          <p class="card-text text-center"><b>{{ data.title }}</b></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">&nbsp;&nbsp;5 mins</small>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                      {% for data in dataset4 %}
+                      <div class="col col-md-4">
+                        <a style="text-decoration: none" href="viewpost_4">
+                        <div class="card shadow-sm">
+                          <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image'>
+                          <p class="card-text text-center"><b>{{ data.title }}</b></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">&nbsp;&nbsp;5 mins</small>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                      {% for data in dataset5 %}
+                      <div class="col col-md-4">
+                        <a style="text-decoration: none" href="viewpost_5">
+                        <div class="card shadow-sm">
+                          <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image'>
+                          <p class="card-text text-center"><b>{{ data.title }}</b></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">&nbsp;&nbsp;5 mins</small>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                      {% for data in dataset6 %}
+                      <div class="col col-md-4">
+                        <a style="text-decoration: none" href="viewpost_6">
+                        <div class="card shadow-sm">
+                          <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image'>
+                          <p class="card-text text-center"><b>{{ data.title }}</b></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">&nbsp;&nbsp;5 mins</small>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                      {% for data in dataset7 %}
+                      <div class="col col-md-4">
+                        <a style="text-decoration: none" href="viewpost_7">
+                        <div class="card shadow-sm">
+                          <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image'>
+                          <p class="card-text text-center"><b>{{ data.title }}</b></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">&nbsp;&nbsp;5 mins</small>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                      {% for data in dataset8 %}
+                      <div class="col col-md-4">
+                        <a style="text-decoration: none" href="viewpost_8">
+                        <div class="card shadow-sm">
+                          <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image'>
+                          <p class="card-text text-center"><b>{{ data.title }}</b></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">&nbsp;&nbsp;5 mins</small>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                      {% for data in dataset9 %}
+                      <div class="col col-md-4">
+                        <a style="text-decoration: none" href="viewpost_9">
+                        <div class="card shadow-sm">
+                          <img src="{% static 'img/' %}{{data.img_path_1}}" class='img-fluid' alt='Responsive image'>
+                          <p class="card-text text-center"><b>{{ data.title }}</b></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <small class="text-body-secondary">&nbsp;&nbsp;5 mins</small>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                    </div>
+                  </div>
+            <!---Thumbnails ends-->
+        </main>
+{% endblock body %}
